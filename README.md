@@ -1,6 +1,11 @@
 # Algorithms for Fun (yay) 
 
-Just fun algorithms in JAVA. Applying classical algorithms to real-world problems and developing analytical solutions. 
+Just fun algorithms in Java 1.8. Applying classical algorithms to real-world problems and developing analytical solutions.
+
+## Dependencies 
+
+Add the following to the build path (mostly used for generating inputs and drawing graphical solutions): 
+https://algs4.cs.princeton.edu/code/algs4.jar
 
 ## Percolation Problem
 
