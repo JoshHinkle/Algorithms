@@ -43,7 +43,9 @@ public class Point implements Comparable<Point> {
     public double slopeTo(Point that) {
         if (this.compareTo(that) == 0) return Double.NEGATIVE_INFINITY;
         if (this.x == that.x) return Double.POSITIVE_INFINITY;
-        return ((double) (that.y - this.y) / (that.x - this.x));
+        double slope = (double) (that.y - this.y) / (that.x - this.x);
+        // Only return +0.0 for horizontal line 
+        return slope + 0.0;
     }
 
     /**
@@ -66,7 +68,7 @@ public class Point implements Comparable<Point> {
      */
     public Comparator<Point> slopeOrder() {
         return (pointOne, pointTwo) -> {
-            double tolerance = .0001;
+            double tolerance = 0.000001;
             if (this.slopeTo(pointOne) - this.slopeTo(pointTwo) < -1 * tolerance) return -1;
             if (this.slopeTo(pointOne) - this.slopeTo(pointTwo) > tolerance) return 1;
             return 0;
@@ -81,29 +83,4 @@ public class Point implements Comparable<Point> {
         return "(" + x + ", " + y + ")";
     }
 
-    /**
-     * Unit tests the Point data type.
-     */
-    public static void main(String[] args) {
-        Point p1 = new Point(0, 0);
-        Point p1Clone = new Point(0, 0);
-        Point flatFromP1 = new Point(1, 0);
-        Point horizontalFromP1 = new Point(0, 10);
-
-        assert p1.slopeTo(p1Clone) == Double.NEGATIVE_INFINITY;
-        assert p1.slopeTo(flatFromP1) == 0;
-        assert p1.slopeTo(horizontalFromP1) == Double.POSITIVE_INFINITY;
-
-        Point p2 = new Point(3, 3);
-        assert p1.slopeTo(p2) == 1;
-        Point p3 = new Point(3, 5);
-        Double tolerance = .1;
-        assert Math.abs(p1.slopeTo(p3) - 1.6) < tolerance;
-        Comparator<Point> comparator = p1.slopeOrder();
-        assert comparator.compare(p2, p3) == -1;
-        Point p4 = new Point(3, 2);
-        assert comparator.compare(p2, p4) == 1;
-        assert comparator.compare(p2, p2) == 0;
-
-    }
 }
