@@ -16,3 +16,7 @@ Find the transition point empty-space probablility for a cell in a nxn system to
 To use, simply run PercolationStats with 2 args (n and trials) to see the mean, standard deviation, and 95% confidence interval.
 
 Trials run in O(nlogn) time and O(n^2) space. Solved with union-find using path compression. 
+
+## Collinear Points 
+
+Two approaches to solving the problem of identifying collinear points (in this case, 4 or more points along the same straight line in a scatter plot). First approach is brute force, taking n^4 time, but second approach sorts by slopes and takes n^2*logn. 
