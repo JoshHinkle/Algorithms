@@ -1,5 +1,3 @@
-import edu.princeton.cs.algs4.StdRandom;
-
 import java.util.Arrays;
 
 public class MergeSort {
@@ -53,17 +51,4 @@ public class MergeSort {
         return true;
     }
 
-    public static void main(String[] args) {
-        Integer[] ints = new Integer[20];
-        for (int i = 0; i < ints.length; i++) {
-            ints[i] = StdRandom.uniform(100);
-        }
-        System.out.println(Arrays.toString(ints));
-        Long startTime = System.nanoTime();
-        bottomUpMergeSort(ints);
-        Long endTime = System.nanoTime();
-        System.out.println(Arrays.toString(ints));
-        System.out.println((endTime - startTime) / 1000000);
-        System.out.println(isSorted(ints) ? "Successfully Sorted!" : "booo not sorted");
-    }
 }

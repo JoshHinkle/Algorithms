@@ -1,8 +1,7 @@
-import java.util.Arrays;
 import java.util.Random;
 
 /**
- * This quicksort uses a slightly different approach from the other. Insetad of converging pointers,
+ * This quicksort uses a slightly different approach from the other. Instead of converging pointers,
  * just keep track of the farthest right smaller-than-key value and swap it as you come across more.
  */
 public class QuickSort2 {
@@ -43,11 +42,5 @@ public class QuickSort2 {
         Object temp = data[i];
         data[i] = data[j];
         data[j] = temp;
-    }
-
-    public static void main(String[] args) {
-        Integer[] numbers = new Integer[]{-19, -20};
-        quickSort(numbers);
-        System.out.println(Arrays.toString(numbers));
     }
 }
