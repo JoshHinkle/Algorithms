@@ -1,7 +1,3 @@
-import edu.princeton.cs.algs4.StdRandom;
-
-import java.util.Arrays;
-
 public class TrivialSort {
 
     private TrivialSort() {
@@ -54,21 +50,5 @@ public class TrivialSort {
             if (input[i].compareTo(input[i + 1]) > 0) return false;
         }
         return true;
-    }
-
-
-    public static void main(String[] args) {
-        Integer[] ints = new Integer[10];
-        for (int i = 0; i < ints.length; i++) {
-            ints[i] = StdRandom.uniform(100);
-        }
-        System.out.println(Arrays.toString(ints));
-        Long startTime = System.nanoTime();
-        selectionSort(ints);
-        Long endTime = System.nanoTime();
-        System.out.println(Arrays.toString(ints));
-        System.out.println((endTime - startTime) / 1000000);
-        System.out.println(isSorted(ints) ? "Successfully Sorted!" : "booo not sorted");
-
     }
 }

@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * This quicksort uses the traditional implementation of two pointers, one on each side of the partition, and swapping if needed
  * as the pointers converge.
@@ -32,11 +30,5 @@ public class QuickSort {
         data[i] = data[j];
         data[j] = temp;
         return data;
-    }
-
-    public static void main(String[] args) {
-        Integer[] numbers = new Integer[]{1, 2, 3, 1};
-        numbers = quickSort(numbers);
-        System.out.println(Arrays.toString(numbers));
     }
 }
