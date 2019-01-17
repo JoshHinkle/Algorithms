@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MergeSort {
     private MergeSort() {
@@ -49,6 +50,13 @@ public class MergeSort {
             if (input[i].compareTo(input[i + 1]) > 0) return false;
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            String b = entry.getKey();
+        }
     }
 
 }
